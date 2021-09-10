@@ -238,7 +238,7 @@ export default {
       this.getUserCreatedDate();
       const req = { orgId: this.selectedUser.organization_id };
 
-      axios.post('http://localhost:3000/fetchOrg', req)
+      axios.post('/fetchOrg', req)
         .then((result) => {
           this.orgDetail = result.data?.OrgDetails;
         })
@@ -246,7 +246,7 @@ export default {
 
       // eslint-disable-next-line no-underscore-dangle
       const ticketReq = { userId: this.selectedUser._id };
-      axios.post('http://localhost:3000/fetchTickets', ticketReq)
+      axios.post('/fetchTickets', ticketReq)
         .then((result) => {
           this.ticketDetail = result.data?.createdTickets;
           this.assignedTickets = result.data?.assignedTickets;

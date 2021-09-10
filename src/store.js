@@ -23,7 +23,7 @@ export const mutations = {
 export const actions = {
   userList({ commit }) {
     return new Promise((resolve, reject) => {
-      axios.get('http://localhost:3000/fetchUsers')
+      axios.get('/fetchUsers')
         .then((result) => {
           commit('userList', result.data?.json);
           resolve(result.data?.json);
